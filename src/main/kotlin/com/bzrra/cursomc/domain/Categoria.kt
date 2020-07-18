@@ -7,11 +7,18 @@ import javax.persistence.GenerationType
 import javax.persistence.Id
 
 @Entity
-class Categoria(
-        @Id
-        @GeneratedValue(strategy = GenerationType.IDENTITY)
-        val id: Int,
-        val nome: String) : Serializable {
+class Categoria : Serializable {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    final var id: Int = 0
+    final var nome: String = ""
+
+    constructor()
+
+    constructor(id: Int, nome: String){
+        this.id = id
+        this.nome = nome
+    }
 
     companion object {
         private const val serialVersionUID = 1L
