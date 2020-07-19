@@ -4,7 +4,7 @@ import java.io.Serializable
 import javax.persistence.*
 
 @Entity
-class Categoria() : Serializable {
+class Produto() : Serializable {
     companion object {
         private const val serialVersionUID = 1L
     }
@@ -13,20 +13,27 @@ class Categoria() : Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     var id: Int? = null
     final var nome: String = ""
+    final var preco: Double = 0.00
 
-    @ManyToMany(mappedBy = "categorias")
-    val produtos: MutableList<Produto> = mutableListOf()
+    @ManyToMany
+    @JoinTable(name = "PRODUTO_CATEGORIA",
+            joinColumns = [JoinColumn(name = "produto_id")],
+            inverseJoinColumns = [JoinColumn(name = "categoria_id")]
+    )
+    val categorias: MutableList<Categoria> = mutableListOf()
 
-    constructor(id: Int?, nome: String) : this() {
+
+    constructor(id: Int?, nome: String, preco: Double) : this() {
         this.id = id
         this.nome = nome
+        this.preco = preco
     }
 
     override fun equals(other: Any?): Boolean {
         if (this === other) return true
         if (javaClass != other?.javaClass) return false
 
-        other as Categoria
+        other as Produto
 
         if (id != other.id) return false
 
@@ -36,6 +43,4 @@ class Categoria() : Serializable {
     override fun hashCode(): Int {
         return id ?: 0
     }
-
-
 }
