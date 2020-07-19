@@ -7,21 +7,19 @@ import javax.persistence.GenerationType
 import javax.persistence.Id
 
 @Entity
-class Categoria : Serializable {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    final var id: Int = 0
-    final var nome: String = ""
-
-    constructor()
-
-    constructor(id: Int, nome: String){
-        this.id = id
-        this.nome = nome
-    }
-
+class Categoria() : Serializable {
     companion object {
         private const val serialVersionUID = 1L
+    }
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    final var id: Int? = null
+    final var nome: String = ""
+
+    constructor(id: Int, nome: String) : this() {
+        this.id = id
+        this.nome = nome
     }
 
     override fun equals(other: Any?): Boolean {
@@ -31,14 +29,13 @@ class Categoria : Serializable {
         other as Categoria
 
         if (id != other.id) return false
-        if (nome != other.nome) return false
 
         return true
     }
 
     override fun hashCode(): Int {
-        var result = id
-        result = 31 * result + nome.hashCode()
-        return result
+        return id ?: 0
     }
+
+
 }
