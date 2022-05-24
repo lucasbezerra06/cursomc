@@ -1,6 +1,6 @@
 package com.lucasbezerra.cursomc.damain;
 
-import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.lucasbezerra.cursomc.damain.enums.EstadoPagamento;
 
 import javax.persistence.*;
@@ -15,7 +15,7 @@ public class Pagamento {
     private Integer id;
     private Integer estado;
 
-    @JsonBackReference
+    @JsonIgnore
     @OneToOne
     @JoinColumn(name = "pedido_id")
     @MapsId
