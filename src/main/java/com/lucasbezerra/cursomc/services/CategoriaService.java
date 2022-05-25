@@ -1,6 +1,7 @@
 package com.lucasbezerra.cursomc.services;
 
 import com.lucasbezerra.cursomc.damain.Categoria;
+import com.lucasbezerra.cursomc.dto.CategoriaDTO;
 import com.lucasbezerra.cursomc.repositories.CategoriaRepository;
 import com.lucasbezerra.cursomc.services.exceptions.DataIntegratyException;
 import com.lucasbezerra.cursomc.services.exceptions.ObjectNotFoundException;
@@ -51,5 +52,9 @@ public class CategoriaService {
     public Page<Categoria> findPage(Integer page, Integer linesPerPage, String orderBy, String direction){
         PageRequest pageRequest = PageRequest.of(page, linesPerPage, Direction.valueOf(direction), orderBy);
         return repo.findAll(pageRequest);
+    }
+
+    public Categoria fromDTO(CategoriaDTO objDto) {
+        return new Categoria(objDto.getId(), objDto.getNome());
     }
 }
