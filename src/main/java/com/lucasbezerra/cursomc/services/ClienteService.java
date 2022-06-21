@@ -1,8 +1,13 @@
 package com.lucasbezerra.cursomc.services;
 
+import com.lucasbezerra.cursomc.damain.Cidade;
 import com.lucasbezerra.cursomc.damain.Cliente;
+import com.lucasbezerra.cursomc.damain.Endereco;
+import com.lucasbezerra.cursomc.damain.enums.TipoCliente;
 import com.lucasbezerra.cursomc.dto.ClienteDTO;
+import com.lucasbezerra.cursomc.dto.ClienteNewDTO;
 import com.lucasbezerra.cursomc.repositories.ClienteRepository;
+import com.lucasbezerra.cursomc.repositories.EnderecoRepository;
 import com.lucasbezerra.cursomc.services.exceptions.DataIntegratyException;
 import com.lucasbezerra.cursomc.services.exceptions.ObjectNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,6 +16,7 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Sort.Direction;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 import java.util.Optional;
@@ -20,6 +26,9 @@ public class ClienteService {
 
     @Autowired
     ClienteRepository repo;
+
+    @Autowired
+    EnderecoRepository enderecoRepository;
 
     public Cliente find(Integer id){
         Optional<Cliente> obj = repo.findById(id);
@@ -33,6 +42,14 @@ public class ClienteService {
     public Page<Cliente> findPage(Integer page, Integer linesPerPage, String orderBy, String direction) {
         PageRequest pageRequest = PageRequest.of(page, linesPerPage, Direction.valueOf(direction), orderBy);
         return repo.findAll(pageRequest);
+    }
+
+    @Transactional
+    public Cliente insert(Cliente obj) {
+        obj.setId(null);
+        obj = repo.save(obj);
+        enderecoRepository.saveAll(obj.getEnderecos());
+        return obj;
     }
 
     public Cliente update(Cliente obj) {
@@ -55,8 +72,24 @@ public class ClienteService {
         return new Cliente(objDto.getId(), objDto.getNome(), objDto.getEmail(), null, null);
     }
 
+    public Cliente fromDTO(ClienteNewDTO objDto) {
+        Cliente cli = new Cliente(null , objDto.getNome(), objDto.getEmail(), objDto.getCpfOuCnpj(), TipoCliente.toEnum(objDto.getTipo()));
+        Cidade cid = new Cidade(objDto.getCidadeId(), null, null);
+        Endereco end = new Endereco(null, objDto.getLogradouro(), objDto.getNumero(), objDto.getComplemento(), objDto.getBairro(), objDto.getCep(), cli, cid);
+        cli.getEnderecos().add(end);
+        cli.getTelefones().add(objDto.getTelefone1());
+        if(objDto.getTelefone2() != null){
+            cli.getTelefones().add(objDto.getTelefone2());
+        }
+        if(objDto.getTelefone3() != null){
+            cli.getTelefones().add(objDto.getTelefone3());
+        }
+        return cli;
+    }
+
     private void updateData(Cliente newObj, Cliente obj){
         newObj.setNome(obj.getNome());
         newObj.setEmail(obj.getEmail());
     }
+
 }
