@@ -3,10 +3,9 @@ package com.lucasbezerra.cursomc.damain;
 import com.fasterxml.jackson.annotation.JsonFormat;
 
 import javax.persistence.*;
-import java.util.Date;
-import java.util.HashSet;
-import java.util.Objects;
-import java.util.Set;
+import java.text.NumberFormat;
+import java.text.SimpleDateFormat;
+import java.util.*;
 
 @Entity
 public class Pedido {
@@ -111,5 +110,29 @@ public class Pedido {
     @Override
     public int hashCode() {
         return Objects.hash(id);
+    }
+
+    public String toString() {
+        NumberFormat nf = NumberFormat.getCurrencyInstance(new Locale("pt", "BR"));
+        SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
+        StringBuffer sb = new StringBuffer();
+        sb.append("Pedido número: ");
+        sb.append(getId());
+        sb.append(", Instante: ");
+        sb.append(sdf.format(getInstante()));
+        sb.append(", Cliente: ");
+        sb.append(getCliente().getNome());
+        sb.append(", Situação: ");
+        sb.append(getPagamento().getEstado().getDescricao());
+        sb.append("\nDetalhes:\n");
+
+        for(ItemPedido ip: getItens()){
+            sb.append(ip.toString());
+        }
+
+        sb.append("Valor total: ");
+        sb.append(nf.format(getValorTotal()));
+
+        return sb.toString();
     }
 }
