@@ -1,6 +1,6 @@
 package com.lucasbezerra.cursomc.services;
 
-import com.lucasbezerra.cursomc.damain.Pedido;
+import com.lucasbezerra.cursomc.domain.Pedido;
 import org.springframework.mail.SimpleMailMessage;
 
 import javax.mail.internet.MimeMessage;

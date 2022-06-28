@@ -1,7 +1,7 @@
 package com.lucasbezerra.cursomc.services;
 
-import com.lucasbezerra.cursomc.damain.Categoria;
-import com.lucasbezerra.cursomc.damain.Produto;
+import com.lucasbezerra.cursomc.domain.Categoria;
+import com.lucasbezerra.cursomc.domain.Produto;
 import com.lucasbezerra.cursomc.repositories.CategoriaRepository;
 import com.lucasbezerra.cursomc.repositories.ProdutoRepository;
 import com.lucasbezerra.cursomc.services.exceptions.ObjectNotFoundException;

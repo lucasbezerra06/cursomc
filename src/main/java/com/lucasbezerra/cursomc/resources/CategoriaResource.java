@@ -1,6 +1,6 @@
 package com.lucasbezerra.cursomc.resources;
 
-import com.lucasbezerra.cursomc.damain.Categoria;
+import com.lucasbezerra.cursomc.domain.Categoria;
 import com.lucasbezerra.cursomc.dto.CategoriaDTO;
 import com.lucasbezerra.cursomc.services.CategoriaService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,7 +11,6 @@ import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 import javax.validation.Valid;
 import java.net.URI;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 

@@ -1,6 +1,6 @@
 package com.lucasbezerra.cursomc.resources;
 
-import com.lucasbezerra.cursomc.damain.Cliente;
+import com.lucasbezerra.cursomc.domain.Cliente;
 import com.lucasbezerra.cursomc.dto.ClienteDTO;
 import com.lucasbezerra.cursomc.dto.ClienteNewDTO;
 import com.lucasbezerra.cursomc.services.ClienteService;

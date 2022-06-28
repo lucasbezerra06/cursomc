@@ -1,7 +1,7 @@
 package com.lucasbezerra.cursomc.services.validation;
 
-import com.lucasbezerra.cursomc.damain.Cliente;
-import com.lucasbezerra.cursomc.damain.enums.TipoCliente;
+import com.lucasbezerra.cursomc.domain.Cliente;
+import com.lucasbezerra.cursomc.domain.enums.TipoCliente;
 import com.lucasbezerra.cursomc.dto.ClienteNewDTO;
 import com.lucasbezerra.cursomc.repositories.ClienteRepository;
 import com.lucasbezerra.cursomc.resources.exception.FieldMessage;

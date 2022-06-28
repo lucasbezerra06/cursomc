@@ -1,4 +1,4 @@
-package com.lucasbezerra.cursomc.damain;
+package com.lucasbezerra.cursomc.domain;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 

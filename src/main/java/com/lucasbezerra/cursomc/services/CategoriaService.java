@@ -1,6 +1,6 @@
 package com.lucasbezerra.cursomc.services;
 
-import com.lucasbezerra.cursomc.damain.Categoria;
+import com.lucasbezerra.cursomc.domain.Categoria;
 import com.lucasbezerra.cursomc.dto.CategoriaDTO;
 import com.lucasbezerra.cursomc.repositories.CategoriaRepository;
 import com.lucasbezerra.cursomc.services.exceptions.DataIntegratyException;

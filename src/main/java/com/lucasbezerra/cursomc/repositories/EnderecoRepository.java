@@ -1,6 +1,6 @@
 package com.lucasbezerra.cursomc.repositories;
 
-import com.lucasbezerra.cursomc.damain.Endereco;
+import com.lucasbezerra.cursomc.domain.Endereco;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

@@ -1,8 +1,8 @@
-package com.lucasbezerra.cursomc.damain;
+package com.lucasbezerra.cursomc.domain;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
-import com.lucasbezerra.cursomc.damain.enums.EstadoPagamento;
+import com.lucasbezerra.cursomc.domain.enums.EstadoPagamento;
 
 import javax.persistence.*;
 import java.io.Serializable;

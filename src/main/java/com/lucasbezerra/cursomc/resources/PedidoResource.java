@@ -1,6 +1,6 @@
 package com.lucasbezerra.cursomc.resources;
 
-import com.lucasbezerra.cursomc.damain.Pedido;
+import com.lucasbezerra.cursomc.domain.Pedido;
 import com.lucasbezerra.cursomc.services.PedidoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;

@@ -1,6 +1,6 @@
 package com.lucasbezerra.cursomc.dto;
 
-import com.lucasbezerra.cursomc.damain.Cliente;
+import com.lucasbezerra.cursomc.domain.Cliente;
 import com.lucasbezerra.cursomc.services.validation.ClienteUpdate;
 import org.hibernate.validator.constraints.Length;
 

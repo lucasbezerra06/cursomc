@@ -1,7 +1,7 @@
-package com.lucasbezerra.cursomc.damain;
+package com.lucasbezerra.cursomc.domain;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.lucasbezerra.cursomc.damain.enums.TipoCliente;
+import com.lucasbezerra.cursomc.domain.enums.TipoCliente;
 
 import javax.persistence.*;
 import java.io.Serializable;

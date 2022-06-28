@@ -1,9 +1,9 @@
 package com.lucasbezerra.cursomc.services;
 
-import com.lucasbezerra.cursomc.damain.ItemPedido;
-import com.lucasbezerra.cursomc.damain.PagamentoComBoleto;
-import com.lucasbezerra.cursomc.damain.Pedido;
-import com.lucasbezerra.cursomc.damain.enums.EstadoPagamento;
+import com.lucasbezerra.cursomc.domain.ItemPedido;
+import com.lucasbezerra.cursomc.domain.PagamentoComBoleto;
+import com.lucasbezerra.cursomc.domain.Pedido;
+import com.lucasbezerra.cursomc.domain.enums.EstadoPagamento;
 import com.lucasbezerra.cursomc.repositories.ItemPedidoRepository;
 import com.lucasbezerra.cursomc.repositories.PagamentoRepository;
 import com.lucasbezerra.cursomc.repositories.PedidoRepository;

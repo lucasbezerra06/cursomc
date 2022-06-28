@@ -1,6 +1,6 @@
 package com.lucasbezerra.cursomc.dto;
 
-import com.lucasbezerra.cursomc.damain.Produto;
+import com.lucasbezerra.cursomc.domain.Produto;
 
 import java.io.Serializable;
 

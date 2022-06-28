@@ -1,4 +1,4 @@
-package com.lucasbezerra.cursomc.damain.enums;
+package com.lucasbezerra.cursomc.domain.enums;
 
 public enum EstadoPagamento {
     PENDENTE(1, "Pendente"),

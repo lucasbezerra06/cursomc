@@ -1,6 +1,6 @@
 package com.lucasbezerra.cursomc.services.validation;
 
-import com.lucasbezerra.cursomc.damain.Cliente;
+import com.lucasbezerra.cursomc.domain.Cliente;
 import com.lucasbezerra.cursomc.dto.ClienteDTO;
 import com.lucasbezerra.cursomc.repositories.ClienteRepository;
 import com.lucasbezerra.cursomc.resources.exception.FieldMessage;
@@ -10,8 +10,6 @@ import org.springframework.web.servlet.HandlerMapping;
 import javax.servlet.http.HttpServletRequest;
 import javax.validation.ConstraintValidator;
 import javax.validation.ConstraintValidatorContext;
-import java.lang.annotation.Annotation;
-import java.net.http.HttpRequest;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;

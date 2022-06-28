@@ -1,7 +1,7 @@
 package com.lucasbezerra.cursomc.repositories;
 
-import com.lucasbezerra.cursomc.damain.Categoria;
-import com.lucasbezerra.cursomc.damain.Produto;
+import com.lucasbezerra.cursomc.domain.Categoria;
+import com.lucasbezerra.cursomc.domain.Produto;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;

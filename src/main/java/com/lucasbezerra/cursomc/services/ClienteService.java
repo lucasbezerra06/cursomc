@@ -1,9 +1,9 @@
 package com.lucasbezerra.cursomc.services;
 
-import com.lucasbezerra.cursomc.damain.Cidade;
-import com.lucasbezerra.cursomc.damain.Cliente;
-import com.lucasbezerra.cursomc.damain.Endereco;
-import com.lucasbezerra.cursomc.damain.enums.TipoCliente;
+import com.lucasbezerra.cursomc.domain.Cidade;
+import com.lucasbezerra.cursomc.domain.Cliente;
+import com.lucasbezerra.cursomc.domain.Endereco;
+import com.lucasbezerra.cursomc.domain.enums.TipoCliente;
 import com.lucasbezerra.cursomc.dto.ClienteDTO;
 import com.lucasbezerra.cursomc.dto.ClienteNewDTO;
 import com.lucasbezerra.cursomc.repositories.ClienteRepository;

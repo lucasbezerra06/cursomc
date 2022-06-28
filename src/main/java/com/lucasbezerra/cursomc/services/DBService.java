@@ -1,8 +1,8 @@
 package com.lucasbezerra.cursomc.services;
 
-import com.lucasbezerra.cursomc.damain.*;
-import com.lucasbezerra.cursomc.damain.enums.EstadoPagamento;
-import com.lucasbezerra.cursomc.damain.enums.TipoCliente;
+import com.lucasbezerra.cursomc.domain.*;
+import com.lucasbezerra.cursomc.domain.enums.EstadoPagamento;
+import com.lucasbezerra.cursomc.domain.enums.TipoCliente;
 import com.lucasbezerra.cursomc.repositories.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

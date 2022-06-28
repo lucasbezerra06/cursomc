@@ -1,8 +1,6 @@
 package com.lucasbezerra.cursomc.resources;
 
-import com.lucasbezerra.cursomc.damain.Cliente;
-import com.lucasbezerra.cursomc.damain.Produto;
-import com.lucasbezerra.cursomc.dto.ClienteDTO;
+import com.lucasbezerra.cursomc.domain.Produto;
 import com.lucasbezerra.cursomc.dto.ProdutoDTO;
 import com.lucasbezerra.cursomc.resources.utils.URL;
 import com.lucasbezerra.cursomc.services.ProdutoService;

@@ -1,8 +1,8 @@
 package com.lucasbezerra.cursomc.config;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.lucasbezerra.cursomc.damain.PagamentoComBoleto;
-import com.lucasbezerra.cursomc.damain.PagamentoComCartao;
+import com.lucasbezerra.cursomc.domain.PagamentoComBoleto;
+import com.lucasbezerra.cursomc.domain.PagamentoComCartao;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.converter.json.Jackson2ObjectMapperBuilder;

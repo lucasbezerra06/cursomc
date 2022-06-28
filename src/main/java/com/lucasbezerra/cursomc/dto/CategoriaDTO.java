@@ -1,6 +1,6 @@
 package com.lucasbezerra.cursomc.dto;
 
-import com.lucasbezerra.cursomc.damain.Categoria;
+import com.lucasbezerra.cursomc.domain.Categoria;
 import org.hibernate.validator.constraints.Length;
 
 import javax.validation.constraints.NotEmpty;

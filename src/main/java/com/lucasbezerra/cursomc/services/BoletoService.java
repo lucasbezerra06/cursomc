@@ -1,6 +1,6 @@
 package com.lucasbezerra.cursomc.services;
 
-import com.lucasbezerra.cursomc.damain.PagamentoComBoleto;
+import com.lucasbezerra.cursomc.domain.PagamentoComBoleto;
 import org.springframework.stereotype.Service;
 
 import java.util.Calendar;
