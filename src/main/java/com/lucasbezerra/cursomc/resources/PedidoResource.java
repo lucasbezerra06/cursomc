@@ -1,8 +1,11 @@
 package com.lucasbezerra.cursomc.resources;
 
+import com.lucasbezerra.cursomc.domain.Categoria;
 import com.lucasbezerra.cursomc.domain.Pedido;
+import com.lucasbezerra.cursomc.dto.CategoriaDTO;
 import com.lucasbezerra.cursomc.services.PedidoService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
@@ -21,6 +24,16 @@ public class PedidoResource {
     public ResponseEntity<Pedido> find(@PathVariable Integer id){
         Pedido obj = service.find(id);
         return ResponseEntity.ok().body(obj);
+    }
+
+    @RequestMapping(method = RequestMethod.GET)
+    public ResponseEntity<Page<Pedido>> findPage(
+            @RequestParam(name = "page", defaultValue = "0") Integer page,
+            @RequestParam(name = "linesPerPage", defaultValue = "24") Integer linesPerPage,
+            @RequestParam(name = "orderBy", defaultValue = "instante") String orderBy,
+            @RequestParam(name = "direction", defaultValue = "DESC") String direction){
+        Page<Pedido> listPage = service.findPage(page, linesPerPage, orderBy, direction);
+        return ResponseEntity.ok().body(listPage);
     }
 
     @RequestMapping(method = RequestMethod.POST)
