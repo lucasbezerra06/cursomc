@@ -1,5 +1,6 @@
 package com.lucasbezerra.cursomc.services;
 
+import com.lucasbezerra.cursomc.domain.Cliente;
 import com.lucasbezerra.cursomc.domain.Pedido;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -68,5 +69,22 @@ public abstract class AbstractEmailService implements EmailService{
         Context context = new Context();
         context.setVariable("pedido", obj);
         return templateEngine.process("email/confirmacaoPedido", context);
+    }
+
+    @Override
+    public void sendNewPasswordEmail(Cliente cliente, String newPass) {
+        SimpleMailMessage msg = prepareNewPasswordEmail(cliente, newPass);
+        sendEmail(msg);
+    }
+
+    protected SimpleMailMessage prepareNewPasswordEmail(Cliente cliente, String newPass) {
+        SimpleMailMessage msg = new SimpleMailMessage();
+        msg.setTo(cliente.getEmail());
+        msg.setFrom(sender);
+        msg.setSubject("Solicitação de nova senha");
+        msg.setSentDate(new Date(System.currentTimeMillis()));
+        msg.setText("Nova senha: " + newPass);
+
+        return msg;
     }
 }
