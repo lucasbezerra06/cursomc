@@ -10,12 +10,14 @@ import java.util.Set;
 import java.util.stream.Collectors;
 
 public class UserSS implements UserDetails {
+    private static final long serialVersionUID = 1L;
+
     private Integer id;
     private String email;
     private String senha;
     private Collection<? extends GrantedAuthority> authorities;
 
-    public UserSS(){
+    public UserSS() {
 
     }
 
@@ -27,7 +29,7 @@ public class UserSS implements UserDetails {
         this.authorities = perfis.stream().map(x -> new SimpleGrantedAuthority(x.getDescricao())).collect(Collectors.toList());
     }
 
-    public Integer getId(){
+    public Integer getId() {
         return id;
     }
 
